@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const StyledPage = styled.main`
   display: flex;
@@ -43,10 +44,12 @@ export default function IndexPage(props) {
   return (
     <StyledPage>
       <section>
-        {props.allStarShips.map((starship) => (
-          <StyledStarshipCard key={starship.name}>
-            <h1>{starship.name}</h1>
-          </StyledStarshipCard>
+        {props.allStarShips.map((starship, idx) => (
+          <Link key={starship.name} to={`/starships/${idx}`}>
+            <StyledStarshipCard key={starship.name}>
+              <h1>{starship.name}</h1>
+            </StyledStarshipCard>
+          </Link>
         ))}
       </section>
       <section>

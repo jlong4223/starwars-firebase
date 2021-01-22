@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import IndexPage from "./pages/IndexPage";
+import DetailPage from "./pages/DetailPage";
 import { fetchStarships } from "./services/starwars-api";
 import { auth } from "./services/firebase";
 
@@ -89,6 +90,19 @@ function Layout() {
                 getNextOrPrev={getNextOrPrev}
                 next={appState.allStarShips.next}
                 prev={appState.allStarShips.previous}
+              />
+            ) : (
+              <Redirect to="/" />
+            )
+          }
+        />
+        <Route
+          exact
+          path="/starships/:id"
+          render={(props) =>
+            userState.user ? (
+              <DetailPage
+                starship={appState.allStarShips.results[props.match.params.id]}
               />
             ) : (
               <Redirect to="/" />

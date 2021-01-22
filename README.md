@@ -9,3 +9,5 @@ This is a project that uses google firebase on the backend to provide authentica
 - react-router
 - pagination
 - starwars API
+- styled components
+- CSS3
