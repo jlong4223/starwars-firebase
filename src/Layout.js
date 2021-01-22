@@ -58,7 +58,8 @@ function Layout() {
 
   // pagination helper function - we are spreading prevstate to keep old data and then add more to it
   async function getNextOrPrev(pageURL) {
-    const data = fetchStarships(pageURL);
+    const data = await fetchStarships(pageURL);
+    // console.log(data);
     setAppState((prevState) => ({
       ...prevState,
       allStarShips: data,
@@ -83,6 +84,7 @@ function Layout() {
             // if there is a user, allow them to see a certain page
             userState.user ? (
               <IndexPage
+                // next and prev work bc the API has this built into it
                 allStarShips={appState.allStarShips.results}
                 getNextOrPrev={getNextOrPrev}
                 next={appState.allStarShips.next}

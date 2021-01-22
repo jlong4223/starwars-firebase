@@ -18,11 +18,12 @@ const StyledPage = styled.main`
     justify-content: center;
     align-items: center;
     button {
+      width: 75px;
       margin: 0 10px;
       padding: 10px;
       background-color: #000;
       color: gold;
-      border-radius: 12px;
+      border-radius: 7px;
     }
   }
 `;
@@ -49,10 +50,15 @@ export default function IndexPage(props) {
         ))}
       </section>
       <section>
-        <button onClick={() => props.getNextOrPrev(props.prev)}>
-          Previous
-        </button>
-        <button onClick={() => props.getNextOrPrev(props.next)}>Next</button>
+        {/* changed the buttons to change based on there being a next or previous button */}
+        {props.prev && (
+          <button onClick={() => props.getNextOrPrev(props.prev)}>
+            Previous
+          </button>
+        )}
+        {props.next && (
+          <button onClick={() => props.getNextOrPrev(props.next)}>Next</button>
+        )}
       </section>
     </StyledPage>
   );
