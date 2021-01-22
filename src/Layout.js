@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
+import IndexPage from "./pages/IndexPage";
 import { fetchStarships } from "./services/starwars-api";
 
 // double backtick is a tagged template literal, we put our css styles in them
@@ -51,6 +52,13 @@ function Layout() {
           path="/"
           render={(props) => (
             <HomePage sampleStarships={appState.sampleStarships} />
+          )}
+        />
+        <Route
+          exact
+          path="/starships"
+          render={(props) => (
+            <IndexPage allStarShips={appState.allStarShips.results} />
           )}
         />
       </Switch>

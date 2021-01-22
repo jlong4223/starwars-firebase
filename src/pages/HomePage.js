@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { fetchStarships } from "../services/starwars-api";
 
 const StyledPage = styled.main`
   display: flex;

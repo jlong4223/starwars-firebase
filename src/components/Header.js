@@ -21,7 +21,9 @@ const StyledHeader = styled.header`
 export default function Header(props) {
   return (
     <StyledHeader>
-      <h1>Starwarsify</h1>
+      <Link to="/">
+        <h1>Starwarsify</h1>
+      </Link>
       <nav>
         <ul>
           <li>
@@ -31,7 +33,7 @@ export default function Header(props) {
             <Link to="">Logout</Link>
           </li>
           <li>
-            <Link to="">All Starships</Link>
+            <Link to="/starships">All Starships</Link>
           </li>
         </ul>
       </nav>
