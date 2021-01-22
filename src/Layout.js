@@ -46,7 +46,13 @@ function Layout() {
     <StyledLayout>
       <Header />
       <Switch>
-        <Route exact path="/" render={(props) => <HomePage />} />
+        <Route
+          exact
+          path="/"
+          render={(props) => (
+            <HomePage sampleStarships={appState.sampleStarships} />
+          )}
+        />
       </Switch>
       <Footer />
     </StyledLayout>
